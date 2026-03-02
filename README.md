@@ -1,50 +1,32 @@
-# Welcome to your Expo app 👋
+# Lab Assignment 3: Props and State Management
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+### In this lab assignment, you will practice passing tasks to the ToDoList component using props. You will create a hard-coded list of tasks in the index.jsx file and then pass these tasks to the ToDoList component.
 
-## Get started
-
-1. Install dependencies
-
-   ```bash
-   npm install
-   ```
-
-2. Start the app
-
-   ```bash
-   npx expo start
-   ```
-
-In the output, you'll find options to open the app in a
-
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
-
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
-
-## Get a fresh project
-
-When you're ready, run:
-
-```bash
-npm run reset-project
+## Instructions
+### Part A: State Management
+1. Open the "App.jsx" file.
+2. Import the useState hook from React.
+3. Use the useState hook to define a state variable to store the list of tasks.
+4. Initialize the state with the following array of hard-coded tasks:
 ```
-
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
-
-## Learn more
-
-To learn more about developing your project with Expo, look at the following resources:
-
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
-
-## Join the community
-
-Join our community of developers creating universal apps.
-
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
+[
+  'Do laundry',
+  'Go to gym',
+  'Walk dog'
+]
+```
+### Part B: Passing Props
+#### Step 1: Pass Tasks Using Props
+Inside the return statement of the App component, pass the tasks array to the ToDoList component using the tasks prop:
+```
+<ToDoList tasks={tasks} />
+```
+### Step 2: Display the Task List
+1. In the ToDoList component's function parameters, destructure the tasks prop:
+```
+function ToDoList({ tasks }) {
+  /* ... */
+}
+```
+2. Use the map function to dynamically render each task as a list item on the screen.
+Leave each task item styled as incomplete.
